@@ -42,8 +42,7 @@
       "headless": true,
 
       "type": "vmware-iso",
-      "guest_os_type": "centos-64",
-      "tools_upload_flavor": "linux"
+      "guest_os_type": "centos-64"
     },
     {
       "vm_name": "centos-7.0",
