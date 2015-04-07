@@ -9,11 +9,8 @@ case "$PACKER_BUILDER_TYPE" in
     rm -rf VBoxGuestAdditions.iso
     ;;
   vmware-iso)
-    mount -o loop linux.iso /mnt
-    tar xf /mnt/VMwareTools-*.tar.gz -C /tmp
-    /tmp/vmware-tools-distrib/vmware-install.pl --default
-    umount /mnt
-    rm -rf /tmp/vmware-tools-distrib
-    rm linux.iso
+    rpm --import http://ftp.tsukuba.wide.ad.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6
+    rpm -ivh http://ftp.tsukuba.wide.ad.jp/Linux/fedora/epel/epel-release-latest-6.noarch.rpm
+    yum install -y open-vm-tools
     ;;
 esac

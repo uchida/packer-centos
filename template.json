@@ -42,7 +42,6 @@
       "headless": true,
 
       "type": "vmware-iso",
-      "tools_upload_flavor": "linux",
       "guest_os_type": "centos-64"
     },
     {
