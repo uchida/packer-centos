@@ -9,6 +9,11 @@ case "$PACKER_BUILDER_TYPE" in
     rm -rf VBoxGuestAdditions.iso
     ;;
   vmware-iso)
-    yum install -y open-vm-tools
+    mount -o loop linux.iso /mnt
+    tar xf /mnt/VMwareTools-*.tar.gz -C /tmp
+    /tmp/vmware-tools-distrib/vmware-install.pl --default
+    umount /mnt
+    rm -rf /tmp/vmware-tools-distrib
+    rm linux.iso
     ;;
 esac
