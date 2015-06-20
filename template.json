@@ -6,7 +6,7 @@
     "iso_checksum_type": "sha256",
     "boot_command": "<esc><wait>linux",
     "boot_wait": "5s",
-    "disk_size": 40960,
+    "disk_size": 8192,
     "http_directory": "http",
     "ssh_username": "root",
     "ssh_password": "packer",
@@ -90,17 +90,14 @@
     },
     {
       "type": "shell",
-      "scripts": [
-        "scripts/cleanup.sh",
-        "scripts/zerodisk.sh"
-      ]
+      "script": "scripts/cleanup.sh"
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-7.1-x64-{{ .Provider }}.box",
-      "keep_input_artifact": false
+      "output": "{{user `vm_name`}}-{{ .Provider }}.box",
+      "compression_level": 0
     }
   ]
 }
