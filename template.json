@@ -1,72 +1,72 @@
 {
+  "variables": {
+    "vm_name": "centos-6.7",
+    "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
+    "iso_checksum": "411da8c3f66839eef9ae47bf4515cc0b82f2a1dfc7b2d5bde2d203ca7e3220f3",
+    "iso_checksum_type": "sha256",
+    "boot_command": "<esc><wait>linux",
+    "boot_wait": "5s",
+    "disk_size": "8192",
+    "http_directory": "http",
+    "ssh_username": "root",
+    "ssh_password": "packer",
+    "ssh_wait_timeout": "1000s",
+    "shutdown_command": "shutdown -P now",
+    "headless": "true"
+  },
   "builders": [
     {
-      "vm_name": "centos-6.6",
-      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
-      "iso_checksum": "411da8c3f66839eef9ae47bf4515cc0b82f2a1dfc7b2d5bde2d203ca7e3220f3",
-      "iso_checksum_type": "sha256",
-      "boot_command": [
-        "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "5s",
-      "disk_size": 40960,
-      "http_directory": "http",
-      "ssh_username": "root",
-      "ssh_password": "packer",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "1000s",
-      "shutdown_command": "shutdown -P now",
-      "headless": true,
-
       "type": "virtualbox-iso",
-      "guest_os_type": "RedHat_64"
+      "guest_os_type": "RedHat_64",
+
+      "vm_name": "{{user `vm_name`}}",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "boot_command": "<esc><wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>",
+      "boot_wait": "{{user `boot_wait`}}",
+      "disk_size": "{{user `disk_size`}}",
+      "http_directory": "http",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "{{user `ssh_wait_timeout`}}",
+      "shutdown_command": "{{user `shutdown_command`}}",
+      "headless": "{{user `headless`}}"
     },
     {
-      "vm_name": "centos-6.6",
-      "iso_url": "http://ftp.tsukuba.wide.ad.jp/Linux/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-netinstall.iso",
-      "iso_checksum": "ad8f6de098503174c7609d172679fa0dd276f4b669708933d9c4927bd3fe1017",
-      "iso_checksum_type": "sha256",
-      "boot_command": [
-        "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "5s",
-      "disk_size": 40960,
-      "http_directory": "http",
-      "ssh_username": "root",
-      "ssh_password": "packer",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "1000s",
-      "shutdown_command": "shutdown -P now",
-      "headless": true,
-
       "type": "vmware-iso",
-      "guest_os_type": "centos-64"
+      "guest_os_type": "centos-64",
+
+      "vm_name": "{{user `vm_name`}}",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "boot_command": "<esc><wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>",
+      "boot_wait": "{{user `boot_wait`}}",
+      "disk_size": "{{user `disk_size`}}",
+      "http_directory": "http",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "{{user `ssh_wait_timeout`}}",
+      "shutdown_command": "{{user `shutdown_command`}}",
+      "headless": "{{user `headless`}}"
     },
     {
-      "vm_name": "centos-6.6",
-      "iso_url": "http://ftp.tsukuba.wide.ad.jp/Linux/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-netinstall.iso",
-      "iso_checksum": "ad8f6de098503174c7609d172679fa0dd276f4b669708933d9c4927bd3fe1017",
-      "iso_checksum_type": "sha256",
-      "boot_command": [
-        "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "5s",
-      "disk_size": 40960,
-      "http_directory": "http",
-      "ssh_username": "root",
-      "ssh_password": "packer",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "1000s",
-      "shutdown_command": "shutdown -P now",
-      "headless": true,
-
       "type": "qemu",
-      "accelerator": "kvm",
-      "format": "qcow2",
-      "qemu_binary": "/usr/libexec/qemu-kvm"
+
+      "vm_name": "{{user `vm_name`}}",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "boot_command": "<esc><wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>",
+      "boot_wait": "{{user `boot_wait`}}",
+      "disk_size": "{{user `disk_size`}}",
+      "http_directory": "http",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "{{user `ssh_wait_timeout`}}",
+      "shutdown_command": "{{user `shutdown_command`}}",
+      "headless": "{{user `headless`}}"
     }
   ],
   "provisioners": [
@@ -81,17 +81,14 @@
     },
     {
       "type": "shell",
-      "scripts": [
-        "scripts/cleanup.sh",
-        "scripts/zerodisk.sh"
-      ]
+      "script": "scripts/cleanup.sh"
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-6.6-x64-{{ .Provider }}.box",
-      "keep_input_artifact": false
+      "output": "{{user `vm_name`}}-{{ .Provider }}.box",
+      "compression_level": 0
     }
   ]
 }
