@@ -6,13 +6,13 @@
     "iso_checksum_type": "sha256",
     "boot_command": "<esc><wait>linux",
     "boot_wait": "5s",
-    "disk_size": 8192,
+    "disk_size": "8192",
     "http_directory": "http",
     "ssh_username": "root",
     "ssh_password": "packer",
     "ssh_wait_timeout": "1000s",
     "shutdown_command": "shutdown -P now",
-    "headless": true
+    "headless": "true"
   },
   "builders": [
     {
@@ -23,10 +23,7 @@
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
-      "boot_command": [
-        "{{user `boot_command`}}",
-        "ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
-      ],
+      "boot_command": "<esc><wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>",
       "boot_wait": "{{user `boot_wait`}}",
       "disk_size": "{{user `disk_size`}}",
       "http_directory": "http",
