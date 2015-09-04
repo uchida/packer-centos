@@ -1,7 +1,7 @@
 {
   "variables": {
     "vm_name": "centos-6.7",
-    "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
+    "iso_url": "http://ftp.riken.jp/Linux/centos/6/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
     "iso_checksum": "411da8c3f66839eef9ae47bf4515cc0b82f2a1dfc7b2d5bde2d203ca7e3220f3",
     "iso_checksum_type": "sha256",
     "boot_command": "<esc><wait>linux",
