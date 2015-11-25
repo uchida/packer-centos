@@ -5,6 +5,12 @@
 
 packer template to build CentOS images
 
+vagrant images are available at uchida/centos.
+
+```
+vagrant init uchida/centos; vagrant up
+```
+
 ## Building Images
 
 To build images, simply run:
