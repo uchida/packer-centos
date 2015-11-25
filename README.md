@@ -1,6 +1,6 @@
 # packer-centos
 
-[![Build Status](https://img.shields.io/travis/uchida/packer-centos.svg)](https://travis-ci.org/uchida/packer-centos)
+[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-centos.svg)](https://circleci.com/gh/uchida/packer-centos)
 [![License](https://img.shields.io/github/license/uchida/packer-centos.svg)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
 
 packer template to build CentOS images
