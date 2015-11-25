@@ -40,8 +40,8 @@ setup instructions are the following:
 2. Get API token
   - [Atlas](https://atlas.hashicorp.com/settings/tokens)
   - [Circle CI](https://circleci.com/account/api)
-3. Create build configuration at [Atlas](https://atlas.hashicorp.com/tutorial/packer-vagrant),
-  this sets `ATLAS_USERNAME` and `ATLAS_NAME` environment variables to build configuration
+3. Create new build configuration at [Atlas](https://atlas.hashicorp.com/builds/new)
+  and [generate token](https://atlas.hashicorp.com/settings/tokens).
 4. Create project at [Circle CI](https://circleci.com/add-projects)
 5. Add Atlas environment variables to Circle CI project:
   ```console
