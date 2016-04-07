@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
-useradd vagrant -g wheel
+useradd vagrant -g wheel -s /bin/bash
 echo "vagrant" | passwd --stdin vagrant
 cat <<EOF > /etc/sudoers.d/vagrant
 vagrant ALL=(ALL) NOPASSWD: ALL
