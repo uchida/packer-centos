@@ -1,8 +1,8 @@
 # packer-centos
 
-![Version](https://img.shields.io/github/tag/uchida/packer-centos.svg)
-[![License](https://img.shields.io/github/license/uchida/packer-centos.svg)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
-[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-centos.svg)](https://circleci.com/gh/uchida/packer-centos)
+![Version](https://img.shields.io/github/tag/uchida/packer-centos.svg?maxAge=2592000)
+[![License](https://img.shields.io/github/license/uchida/packer-centos.svg?maxAge=2592000)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
+[![CircleCI](https://img.shields.io/circleci/project/uchida/packer-centos.svg?maxAge=2592000)](https://circleci.com/gh/uchida/packer-centos)
 
 packer template to build CentOS images
 
